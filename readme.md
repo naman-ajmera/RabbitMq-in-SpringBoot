@@ -7,7 +7,7 @@
      
   **Queues**: 4 Queues: 1. Queue Name:
 
-**Run RabbitMq in docker: **
+**Run RabbitMq in docker:**
   1. run command: docker run -d --hostname my-rabbit --name some-rabbit -p 15672:15672 -p 5672:5672 rabbitmq:3-management
 
 **Run SpringBoot Project:**

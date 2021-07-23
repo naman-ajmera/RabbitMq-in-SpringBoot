@@ -11,7 +11,7 @@ public class MessageConsumer {
     private static final String EXCHANGE = "topic_exchange1";
     private static final String ROUTING = "routing_key1";
     private static final String QUEUE2 = "message_queue2";
-    private static final String EXCHANGE2 = "topic_exchange2";
+    private static final String EXCHANGE2 = "fanout_exchange1";
     private static final String ROUTING2 = "routing_key2";
     private static final String QUEUE3 = "message_queue3";
     private static final String ROUTING3 = "routing_key3";
@@ -20,17 +20,17 @@ public class MessageConsumer {
 
     @RabbitListener(queues = QUEUE3)
     public void listenMessage(CustomMessage message){
-        System.out.println(message.getMessage()+"fanoutExchange linked to Q3");
+        System.out.println(message.getMessage()+"fanoutExchange linked to Queue3");
     }
 
     @RabbitListener(queues = {QUEUE,QUEUE2})
     public void listenMessage1(CustomMessage message){
-        System.out.println(message.getMessage()+"topicExchange linked to Q1, Q2");
+        System.out.println(message.getMessage()+"topicExchange linked to Queue1, Queue2");
     }
 
     @RabbitListener(queues = QUEUE4)
     public void listenMessage2(CustomMessage message){
-        System.out.println(message.getMessage()+"fanoutExchange linked to Q4");
+        System.out.println(message.getMessage()+"fanoutExchange linked to Queue4");
     }
 
 }

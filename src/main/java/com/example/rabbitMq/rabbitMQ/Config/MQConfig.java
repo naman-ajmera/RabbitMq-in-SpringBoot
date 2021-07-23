@@ -16,7 +16,7 @@ public class MQConfig {
     private static final String EXCHANGE = "topic_exchange1";
     private static final String ROUTING = "routing_key1";
     private static final String QUEUE2 = "message_queue2";
-    private static final String EXCHANGE2 = "topic_exchange2";
+    private static final String EXCHANGE2 = "fanout_exchange1";
     private static final String ROUTING2 = "routing_key2";
     private static final String QUEUE3 = "message_queue3";
     private static final String ROUTING3 = "routing_key3";
@@ -52,11 +52,6 @@ public class MQConfig {
     public FanoutExchange fanoutExchange(){
         return new FanoutExchange(EXCHANGE2);
     }
-//
-//    @Bean
-//    public TopicExchange topicExchange2(){
-//        return new TopicExchange(EXCHANGE2);
-//    }
 
     @Bean
     Binding binding1(TopicExchange topicExchange) {
@@ -76,6 +71,11 @@ public class MQConfig {
     @Bean
     Binding binding4(FanoutExchange fanoutExchange) {
         return BindingBuilder.bind(queue4()).to(fanoutExchange());
+    }
+
+    @Bean
+    Binding binding5(FanoutExchange fanoutExchange) {
+        return BindingBuilder.bind(queue2()).to(fanoutExchange());
     }
 
     @Bean

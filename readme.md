@@ -12,4 +12,8 @@
 
 **Run SpringBoot Project:**
   1. run main application.
-  2. access /publish with body {"message":"message to publish"} using Postman.
+  2. Access /publish with body {"message":"message to publish"} using Postman to Publish to All Exchanges.
+  3. Access /publish/fanoutExchange with body {"message":"message to publish"} using Postman to Publish to Fanout Exchanges.
+  4. Access /publish/topicExchange with body {"message":"message to publish"} using Postman to Publish to Topic Exchanges.
+
+

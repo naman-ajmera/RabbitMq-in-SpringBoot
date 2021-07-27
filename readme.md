@@ -2,6 +2,8 @@
 
 **How My RabbitMq Architecture looks like:**
 
+https://user-images.githubusercontent.com/36277015/126775205-17a5dc1f-a521-4478-9bdc-947007c83108.png
+
   **Exchange**: 2 Exchanges: 1. Topic Exchange
                              2. Fanout Exchange
      
